@@ -34,7 +34,7 @@ export function copyPackages(
 ) {
   return Promise.all(
     dependencies.map(({ folder }) =>
-      FolderSync.copyFolderRecursive(folder, join(outFolder, outFolderName))
+      FolderSync.copyFolderRecursive(folder, join(outFolder, outFolderName)),
     ),
   );
 }

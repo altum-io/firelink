@@ -34,9 +34,7 @@ export function copyPackages(
 ) {
   return Promise.all(
     dependencies.map(({ folder }) =>
-      isWin
-        ? FolderSync.copyFolderRecursive(folder, join(outFolder, outFolderName))
-        : copyOther(folder, outFolder, outFolderName, excludes),
+      FolderSync.copyFolderRecursive(folder, join(outFolder, outFolderName))
     ),
   );
 }
